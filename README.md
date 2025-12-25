@@ -19,16 +19,9 @@ Flewi is a language-learning web app with flashcards and spaced repetition.
 - Use pronunciation / audio (depends on your configured TTS provider)
 - Install as a PWA (add to home screen)
 
-## Run (Docker)
+## Visit
 
-```bash
-git clone https://github.com/ma6di/Flewi.git
-cd Flewi
-
-docker compose up -d
-```
-
-Open http://localhost
+https://flewi.app/
 
 ## Install (PWA)
 
@@ -39,8 +32,6 @@ Flewi supports installation as a Progressive Web App (PWA), so you can add it to
 - Desktop (Chrome/Edge): click the install icon in the address bar (if shown)
 
 ## Screenshots
-
-Add images to a folder (for example `docs/screenshots/`) and link them here.
 
 
 Home (desktop)
@@ -71,12 +62,3 @@ Stats (desktop)
 </table>
 ## Useful links
 
-- API docs (after start): http://localhost:8000/docs
-- Deployment: [DOCKER_DEPLOYMENT.md](DOCKER_DEPLOYMENT.md)
-
-## Troubleshooting
-
-```bash
-docker compose logs -f
-docker compose restart
-```
