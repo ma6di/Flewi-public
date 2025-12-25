@@ -55,9 +55,9 @@ Stats (desktop)
 
 <img src="https://github.com/user-attachments/assets/dfff228d-3ed6-435c-863c-45d0873262ad" width="900" alt="Stats" />
 
-Focus Mode (mobile)
+Focus Mode (mobile)                               Decks (mobile)
 
-<img src="https://github.com/user-attachments/assets/28230581-3769-48e0-87f8-132bfb97e929" width="360" alt="Focus Mode" /> Decks (mobile) <img src="https://github.com/user-attachments/assets/79600cdc-0ba7-4684-a21b-ec41b68ffd15" width="360" alt="Decks" />
+<img src="https://github.com/user-attachments/assets/28230581-3769-48e0-87f8-132bfb97e929" width="360" alt="Focus Mode" />  <img src="https://github.com/user-attachments/assets/79600cdc-0ba7-4684-a21b-ec41b68ffd15" width="360" alt="Decks" />
 ## Useful links
 
 - API docs (after start): http://localhost:8000/docs
