@@ -1,6 +1,17 @@
 # Flewi
 
-Flewi is a language-learning web app with flashcards and spaced repetition.
+Flewi is a personal project for learning German, focused on making vocabulary acquisition fast and easy:
+
+- Automated flashcard creation from German words
+- Color-coded articles (der/die/das) for nouns
+- Automatic word categorization (verb, noun, adjective, adverb, ...)
+- Custom decks and collections
+- Forum to share and download decks with others
+- Focus Mode to study without UI distractions
+- Progress tracking and learning stats
+
+Not a commercial product.
+
 
 ## Tech stack
 
