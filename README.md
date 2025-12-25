@@ -42,11 +42,26 @@ Flewi supports installation as a Progressive Web App (PWA), so you can add it to
 
 Add images to a folder (for example `docs/screenshots/`) and link them here.
 
-![Home](<img width="1402" height="878" alt="Image" src="https://github.com/user-attachments/assets/e1debb36-3dda-4070-8121-8af08034e757" />)
-![Flashcards](<img width="1087" height="952" alt="Image" src="https://github.com/user-attachments/assets/f0c35fa0-5899-4b35-8cfa-ea4e7840206a" />)
-![Focus Mode](https://github.com/user-attachments/assets/28230581-3769-48e0-87f8-132bfb97e929)
-![Stats](<img width="1087" height="952" alt="Image" src="https://github.com/user-attachments/assets/dfff228d-3ed6-435c-863c-45d0873262ad" />)
-![Decks](<img width="591" height="1280" alt="Image" src="https://github.com/user-attachments/assets/79600cdc-0ba7-4684-a21b-ec41b68ffd15" />)
+
+Home (desktop)
+
+<img src="https://github.com/user-attachments/assets/e1debb36-3dda-4070-8121-8af08034e757" width="900" alt="Home" />
+
+Flashcards (desktop)
+
+<img src="https://github.com/user-attachments/assets/f0c35fa0-5899-4b35-8cfa-ea4e7840206a" width="900" alt="Flashcards" />
+
+Stats (desktop)
+
+<img src="https://github.com/user-attachments/assets/dfff228d-3ed6-435c-863c-45d0873262ad" width="900" alt="Stats" />
+
+Focus Mode (mobile)
+
+<img src="https://github.com/user-attachments/assets/28230581-3769-48e0-87f8-132bfb97e929" width="360" alt="Focus Mode" />
+
+Decks (mobile)
+
+<img src="https://github.com/user-attachments/assets/79600cdc-0ba7-4684-a21b-ec41b68ffd15" width="360" alt="Decks" />
 ## Useful links
 
 - API docs (after start): http://localhost:8000/docs
