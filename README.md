@@ -71,5 +71,4 @@ Stats (desktop)
     </td>
   </tr>
 </table>
-## Useful links
 
