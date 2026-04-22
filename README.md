@@ -1,64 +1,80 @@
-# Flewi
+# Flewi 🦉
 
-Flewi is a German vocabulary learning app focused on making acquisition fast and effective:
+**Flewi** is a production-grade, full-stack German vocabulary learning platform designed to make language acquisition fast and effective. Built from the ground up to showcase modern web development practices, it features a custom spaced-repetition algorithm, a highly responsive native-like UI, seamless PWA support, and a robust microservices backend.
 
-- Automated flashcard creation from German words
-- Color-coded articles (der/die/das) for nouns
-- Automatic word categorization (verb, noun, adjective, adverb, ...)
-- Spaced repetition (SRS) — reviews scheduled by how well you know each word
-- Artikel Practice — guess der/die/das/plural with color-coded feedback
-- Collection decks & sets to browse and download curated word lists
-- Progress tracking: streak, mastery rate, daily dashboard
-- Pronunciation audio per word
-- Install as a PWA (works offline, add to home screen)
+*This repository serves as a showcase of my ability to architect, develop, and deliver a complete, scalable product.*
 
-## Tech stack
+## ✨ Engineering Highlights
 
-- Frontend: React (Vite), Tailwind CSS
-- Backend: FastAPI (Python)
-- Database: PostgreSQL
-- Cache / queues: Redis
-- Reverse proxy / TLS: Caddy (in production)
-- Containers: Docker / Docker Compose
+- **Advanced Spaced Repetition Algorithm (SRS):** Engineered a custom scheduling engine that optimizes memory retention by calculating dynamic review intervals, ensuring users only study what they are about to forget.
+- **Native-Like PWA Experience:** Highly polished frontend with fluid gesture-driven animations, complex state management, and an installable Progressive Web App architecture for instant, app-like access.
+- **High-Performance Backend:** Asynchronous Python backend powered by FastAPI, backed by PostgreSQL for relational data and Redis for caching and session management.
+- **Fully Dockerized Infrastructure:** Containerized across multiple microservices (Frontend, API, DB, Cache, Reverse Proxy) with a streamlined production deployment pipeline.
 
-## Run (Docker)
+## 📸 Visual Tour
 
-```bash
-git clone https://github.com/ma6di/Flewi.git
-cd Flewi
+<p align="center">
+  <img src="mobile-screenshots/IMG_9951.PNG" width="19%" alt="Flashcard review" />
+  <img src="mobile-screenshots/IMG_9955.PNG" width="19%" alt="Spaced repetition" />
+  <img src="mobile-screenshots/IMG_9957.PNG" width="19%" alt="Artikel Practice" />
+  <img src="mobile-screenshots/IMG_9952.PNG" width="19%" alt="Collection decks" />
+  <img src="mobile-screenshots/IMG_9953.PNG" width="19%" alt="Progress and streak" />
+</p>
 
-docker compose up -d
-```
+## 🚀 Key Features
 
-Open http://localhost
+### 🎨 Artikel Practice & Gamification
+Mastering German noun genders (der, die, das) and plurals is notoriously difficult. Flewi solves this using gamified, color-coded feedback where visual associations cement correct genders effortlessly.
 
-## Install (PWA)
+### 📚 Smart Categories & Collection Decks
+Words are automatically parsed and categorized by part of speech. The app includes a marketplace of curated **Collection Decks** that users can instantly pull into their learning queue.
 
-Flewi supports installation as a Progressive Web App (PWA).
+### 🎙️ Real-Time Guided Pronunciation
+Integrates clean, native-sounding text-to-speech audio generated dynamically for every vocabulary card, enhancing reading comprehension alongside listening skills.
 
-- iOS (Safari): open the site → Share → Add to Home Screen
-- Android (Chrome): open the site → menu (⋮) → Install app / Add to Home screen
-- Desktop (Chrome/Edge): click the install icon in the address bar (if shown)
+### 🔥 Rich Progress Tracking & Analytics
+Features a comprehensive daily dashboard tracking learning milestones, visual mastery rates, and engagement streaks to drive user retention.
 
-## Screenshots
+## 🛠️ Tech Stack
 
-Flashcard review
+**Frontend:**
+- **React.js (Vite)** / React Router
+- **Tailwind CSS** for rapid, responsive styling
+- Custom gestures & animation logic
+- PWA configuration (Service Workers, Web Manifests)
 
-<img src="mobile-screenshots/IMG_9951.PNG" width="360" alt="Flashcard review" />
+**Mobile App (iOS/Android):**
+- **React Native (Expo)** for high-performance cross-platform mobile development
+- **Authentication:** Native Sign in with Apple & Google Auth integration
+- **Monetization:** Fully integrated App Store in-app subscriptions / purchases
+- **Audio Generation:** Real-time Google Cloud Text-to-Speech (TTS) integration
+- **Engagement:** Local and push notifications for streak reminders and spaced repetition scheduling
 
-Spaced repetition
+**Backend:**
+- **FastAPI (Python)** for high-throughput, async REST APIs
+- **SQLAlchemy ORM** & Alembic for database migrations
+- **PostgreSQL** for robust, relational data storage
+- **Redis** for caching, pub/sub, and fast ephemeral state
 
-<img src="mobile-screenshots/IMG_9955.PNG" width="360" alt="Spaced repetition" />
+**Infrastructure & DevOps:**
+- **Docker** & **Docker Compose** for orchestration
+- **Caddy** as a modern reverse proxy with automatic TLS
+- Engineered for seamless, zero-downtime deployments
 
-Artikel Practice
+## 🌍 Live Application
 
-<img src="mobile-screenshots/IMG_9957.PNG" width="360" alt="Artikel Practice" />
+**Experience the platform live:** [flewi.app](https://flewi.app)
 
-Collection decks
+Currently available as a high-performance responsive web application. 
 
-<img src="/mobile-screenshots/IMG_9952.PNG" width="360" alt="Collection decks" />
+**Native Apps:**
+- 🍎 **iOS App:** Coming soon to the App Store.
+- 🤖 **Android App:** Coming soon to the Google Play Store.
 
-Progress & streak
+## 📱 Install (PWA)
 
-<img src="mobile-screenshots/IMG_9953.PNG" width="360" alt="Progress and streak" />
+While the native apps are being finalized, Flewi supports seamless installation as a Progressive Web App (PWA) for an immediate native-app feel.
 
+- **iOS (Safari):** Open [flewi.app](https://flewi.app) → Share → Add to Home Screen
+- **Android (Chrome):** Open [flewi.app](https://flewi.app) → Menu (⋮) → Install app
+- **Desktop (Chrome/Edge):** Click the install icon in the address bar
