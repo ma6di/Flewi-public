@@ -1,42 +1,40 @@
 # Flewi
 
-Flewi is a personal project for learning German, focused on making vocabulary acquisition fast and easy:
+Flewi is a German vocabulary learning app focused on making acquisition fast and effective:
 
 - Automated flashcard creation from German words
 - Color-coded articles (der/die/das) for nouns
 - Automatic word categorization (verb, noun, adjective, adverb, ...)
-- Custom decks and collections
-- Forum to share and download decks with others
-- Focus Mode to study without UI distractions
-- Progress tracking and learning stats
-
-Not a commercial product.
-
+- Spaced repetition (SRS) — reviews scheduled by how well you know each word
+- Artikel Practice — guess der/die/das/plural with color-coded feedback
+- Collection decks & sets to browse and download curated word lists
+- Progress tracking: streak, mastery rate, daily dashboard
+- Pronunciation audio per word
+- Install as a PWA (works offline, add to home screen)
 
 ## Tech stack
 
 - Frontend: React (Vite), Tailwind CSS
 - Backend: FastAPI (Python)
 - Database: PostgreSQL
-- Cache/queues: Redis
+- Cache / queues: Redis
 - Reverse proxy / TLS: Caddy (in production)
 - Containers: Docker / Docker Compose
 
-## What you can do
+## Run (Docker)
 
-- Create and review flashcards with spaced repetition
-- Organize words into boxes/collections
-- Track learning progress and activity
-- Use pronunciation / audio (depends on your configured TTS provider)
-- Install as a PWA (add to home screen)
+```bash
+git clone https://github.com/ma6di/Flewi.git
+cd Flewi
 
-## Visit
+docker compose up -d
+```
 
-https://flewi.app/
+Open http://localhost
 
 ## Install (PWA)
 
-Flewi supports installation as a Progressive Web App (PWA), so you can add it to your home screen and use it like a native app.
+Flewi supports installation as a Progressive Web App (PWA).
 
 - iOS (Safari): open the site → Share → Add to Home Screen
 - Android (Chrome): open the site → menu (⋮) → Install app / Add to Home screen
@@ -44,31 +42,23 @@ Flewi supports installation as a Progressive Web App (PWA), so you can add it to
 
 ## Screenshots
 
+Flashcard review
 
-Home (desktop)
+<img src="mobile-screenshots/IMG_9951.PNG" width="360" alt="Flashcard review" />
 
-<img src="https://github.com/user-attachments/assets/e1debb36-3dda-4070-8121-8af08034e757" width="900" alt="Home" />
+Spaced repetition
 
-Flashcards (desktop)
+<img src="mobile-screenshots/IMG_9955.PNG" width="360" alt="Spaced repetition" />
 
-<img src="https://github.com/user-attachments/assets/f0c35fa0-5899-4b35-8cfa-ea4e7840206a" width="900" alt="Flashcards" />
+Artikel Practice
 
-Stats (desktop)
+<img src="mobile-screenshots/IMG_9957.PNG" width="360" alt="Artikel Practice" />
 
-<img src="https://github.com/user-attachments/assets/dfff228d-3ed6-435c-863c-45d0873262ad" width="900" alt="Stats" />
+Collection decks
 
-<table>
-  <tr>
-    <th>Focus Mode (mobile)</th>
-    <th>Decks (mobile)</th>
-  </tr>
-  <tr>
-    <td align="center">
-      <img src="https://github.com/user-attachments/assets/28230581-3769-48e0-87f8-132bfb97e929" width="360" alt="Focus Mode" />
-    </td>
-    <td align="center">
-      <img src="https://github.com/user-attachments/assets/79600cdc-0ba7-4684-a21b-ec41b68ffd15" width="360" alt="Decks" />
-    </td>
-  </tr>
-</table>
+<img src="/mobile-screenshots/IMG_9952.PNG" width="360" alt="Collection decks" />
+
+Progress & streak
+
+<img src="mobile-screenshots/IMG_9953.PNG" width="360" alt="Progress and streak" />
 
