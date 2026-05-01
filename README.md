@@ -16,10 +16,12 @@
 <p align="center">
   <img src="mobile-screenshots/IMG_9958.PNG" width="19%" alt="Flashcard review" />
   <img src="mobile-screenshots/IMG_9951.PNG" width="19%" alt="Flashcard review" />
+  <img src="mobile-screenshots/IMG_9950.PNG" width="19%" alt="Flashcard review" />
   <img src="mobile-screenshots/IMG_9955.PNG" width="19%" alt="Spaced repetition" />
   <img src="mobile-screenshots/IMG_9957.PNG" width="19%" alt="Artikel Practice" />
   <img src="mobile-screenshots/IMG_9952.PNG" width="19%" alt="Collection decks" />
   <img src="mobile-screenshots/IMG_9953.PNG" width="19%" alt="Progress and streak" />
+  <img src="mobile-screenshots/IMG_9954.PNG" width="19%" alt="Progress and streak" />
 </p>
 
 ## 🚀 Key Features
