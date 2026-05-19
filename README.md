@@ -4,6 +4,9 @@
 
 *This repository serves as a showcase of my ability to architect, develop, and deliver a complete, scalable product.*
 
+**Native Apps:**
+- 🍎 **iOS App:** Live on the App Store: https://apps.apple.com/us/app/flewi/id6761818741
+
 ## ✨ Engineering Highlights
 
 - **Advanced Spaced Repetition Algorithm (SRS):** Engineered a custom scheduling engine that optimizes memory retention by calculating dynamic review intervals, ensuring users only study what they are about to forget.
@@ -14,14 +17,14 @@
 ## 📸 Visual Tour
 
 <p align="center">
-  <img src="mobile-screenshots/IMG_9958.PNG" width="19%" alt="Flashcard review" />
-  <img src="mobile-screenshots/IMG_9951.PNG" width="19%" alt="Flashcard review" />
-  <img src="mobile-screenshots/IMG_9950.PNG" width="19%" alt="Flashcard review" />
-  <img src="mobile-screenshots/IMG_9955.PNG" width="19%" alt="Spaced repetition" />
-  <img src="mobile-screenshots/IMG_9957.PNG" width="19%" alt="Artikel Practice" />
-  <img src="mobile-screenshots/IMG_9952.PNG" width="19%" alt="Collection decks" />
-  <img src="mobile-screenshots/IMG_9953.PNG" width="19%" alt="Progress and streak" />
-  <img src="mobile-screenshots/IMG_9954.PNG" width="19%" alt="Progress and streak" />
+  <img src="frontend/public/mobile-screenshots/IMG_9958.PNG" width="19%" alt="Flashcard review" />
+  <img src="frontend/public/mobile-screenshots/IMG_9951.PNG" width="19%" alt="Flashcard review" />
+  <img src="frontend/public/mobile-screenshots/IMG_9950.PNG" width="19%" alt="Flashcard review" />
+  <img src="frontend/public/mobile-screenshots/IMG_9955.PNG" width="19%" alt="Spaced repetition" />
+  <img src="frontend/public/mobile-screenshots/IMG_9957.PNG" width="19%" alt="Artikel Practice" />
+  <img src="frontend/public/mobile-screenshots/IMG_9952.PNG" width="19%" alt="Collection decks" />
+  <img src="frontend/public/mobile-screenshots/IMG_9953.PNG" width="19%" alt="Progress and streak" />
+  <img src="frontend/public/mobile-screenshots/IMG_9954.PNG" width="19%" alt="Progress and streak" />
 </p>
 
 ## 🚀 Key Features
@@ -71,7 +74,7 @@ Features a comprehensive daily dashboard tracking learning milestones, visual ma
 Currently available as a high-performance responsive web application. 
 
 **Native Apps:**
-- 🍎 **iOS App:** Coming soon to the App Store.
+- 🍎 **iOS App:** Live on the App Store: https://apps.apple.com/us/app/flewi/id6761818741
 - 🤖 **Android App:** Coming soon to the Google Play Store.
 
 ## 📱 Install (PWA)
