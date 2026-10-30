@@ -1,86 +1,126 @@
-# Flewi 🦉
+# Flewi
 
-**Flewi** is a production-grade, full-stack German vocabulary learning platform designed to make language acquisition fast and effective. Built from the ground up to showcase modern web development practices, it features a custom spaced-repetition algorithm, a highly responsive native-like UI, seamless PWA support, and a robust microservices backend.
+**Flewi is a spaced-repetition learning app for anything you need to remember.**
+It started as German vocabulary and grew past it: a Space can be a language, a
+school subject, or a professional exam. Cards come back on the day you are
+about to forget them, and the app decides which day that is.
 
-*This repository serves as a showcase of my ability to architect, develop, and deliver a complete, scalable product.*
+Live on iOS, Android and the web, built and shipped solo.
 
-**Native Apps:**
-- 🍎 **iOS App:** Live on the App Store: https://apps.apple.com/us/app/flewi/id6761818741
+- **iOS** — [App Store](https://apps.apple.com/us/app/flewi/id6761818741)
+- **Android** — direct download at [flewi.app/android](https://flewi.app/android)
+- **Web** — [flewi.app](https://flewi.app)
 
-## ✨ Engineering Highlights
+Current release **2.0.4**.
 
-- **Advanced Spaced Repetition Algorithm (SRS):** Engineered a custom scheduling engine that optimizes memory retention by calculating dynamic review intervals, ensuring users only study what they are about to forget.
-- **Native-Like PWA Experience:** Highly polished frontend with fluid gesture-driven animations, complex state management, and an installable Progressive Web App architecture for instant, app-like access.
-- **High-Performance Backend:** Asynchronous Python backend powered by FastAPI, backed by PostgreSQL for relational data and Redis for caching and session management.
-- **Fully Dockerized Infrastructure:** Containerized across multiple microservices (Frontend, API, DB, Cache, Reverse Proxy) with a streamlined production deployment pipeline.
+*This repository is a showcase: the product itself is closed-source, and what
+follows is an account of how it is built and what it does.*
 
-## 📸 Visual Tour
+---
+
+## What it looks like
 
 <p align="center">
-  <img src="frontend/public/mobile-screenshots/IMG_9958.PNG" width="19%" alt="Flashcard review" />
-  <img src="frontend/public/mobile-screenshots/IMG_9951.PNG" width="19%" alt="Flashcard review" />
-  <img src="frontend/public/mobile-screenshots/IMG_9950.PNG" width="19%" alt="Flashcard review" />
-  <img src="frontend/public/mobile-screenshots/IMG_9955.PNG" width="19%" alt="Spaced repetition" />
-  <img src="frontend/public/mobile-screenshots/IMG_9957.PNG" width="19%" alt="Artikel Practice" />
-  <img src="frontend/public/mobile-screenshots/IMG_9952.PNG" width="19%" alt="Collection decks" />
-  <img src="frontend/public/mobile-screenshots/IMG_9953.PNG" width="19%" alt="Progress and streak" />
-  <img src="frontend/public/mobile-screenshots/IMG_9954.PNG" width="19%" alt="Progress and streak" />
+  <img src="mobile-screenshots/01-spaces.png" width="23%" alt="Spaces for German, French, Spanish and Math, each with its own card counts" />
+  <img src="mobile-screenshots/02-library.png" width="23%" alt="Library showing 45 cards due and 15 new today" />
+  <img src="mobile-screenshots/03-todays-plan.png" width="23%" alt="Today's plan as a numbered three-step sequence with a time estimate" />
+  <img src="mobile-screenshots/04-review.png" width="23%" alt="A review card with Forgot, Hard and Easy, each showing its interval" />
+</p>
+<p align="center">
+  <img src="mobile-screenshots/05-smart-add.png" width="23%" alt="Smart Add builds a full card from a single word" />
+  <img src="mobile-screenshots/06-manual-card.png" width="23%" alt="The manual builder, where the form is the card itself" />
+  <img src="mobile-screenshots/07-discover.png" width="23%" alt="Discover, a browsable list of shared decks" />
+  <img src="mobile-screenshots/08-german-ui.png" width="23%" alt="The same library in German" />
 </p>
 
-## 🚀 Key Features
+---
 
-### 🎨 Artikel Practice & Gamification
-Mastering German noun genders (der, die, das) and plurals is notoriously difficult. Flewi solves this using gamified, color-coded feedback where visual associations cement correct genders effortlessly.
+## The interesting problems
 
-### 📚 Smart Categories & Collection Decks
-Words are automatically parsed and categorized by part of speech. The app includes a marketplace of curated **Collection Decks** that users can instantly pull into their learning queue.
+### Scheduling, and admitting what the schedule is doing
 
-### 🎙️ Real-Time Guided Pronunciation
-Integrates clean, native-sounding text-to-speech audio generated dynamically for every vocabulary card, enhancing reading comprehension alongside listening skills.
+The review engine is a custom SRS. A wrong answer walks a card back down a
+fixed ladder — ten minutes, an hour, six hours, a day — while a correct one
+multiplies its interval by a per-card ease factor. The first "easy" out of
+learning is a flat 2.5 days, and an "easy" straight after a lapse is capped at
+one day, so a single lucky recall cannot undo the lapse.
 
-### 🔥 Rich Progress Tracking & Analytics
-Features a comprehensive daily dashboard tracking learning milestones, visual mastery rates, and engagement streaks to drive user retention.
+The part worth pointing at is in the UI, not the algorithm: **each rating
+button prints the interval it will apply before you press it.** Most apps hide
+the schedule and ask for trust. Showing it costs nothing and turns an opaque
+system into one the learner can reason about.
 
-## 🛠️ Tech Stack
+### Turning a backlog into a session
 
-**Frontend:**
-- **React.js (Vite)** / React Router
-- **Tailwind CSS** for rapid, responsive styling
-- Custom gestures & animation logic
-- PWA configuration (Service Workers, Web Manifests)
+A due queue of 300 cards is a number that makes people close the app. Today's
+plan is a numbered sequence — review, then new words, then the article drill —
+with a time estimate on each step and the next one handed over as each
+finishes. New cards are dealt round-robin across decks rather than draining the
+oldest, so one large deck cannot starve the others. When the day's limit is
+reached, the app says when the next cards unlock instead of going quiet.
 
-**Mobile App (iOS/Android):**
-- **React Native (Expo)** for high-performance cross-platform mobile development
-- **Authentication:** Native Sign in with Apple & Google Auth integration
-- **Monetization:** Fully integrated App Store in-app subscriptions / purchases
-- **Audio Generation:** Real-time Google Cloud Text-to-Speech (TTS) integration
-- **Engagement:** Local and push notifications for streak reminders and spaced repetition scheduling
+### One word in, a whole card out
 
-**Backend:**
-- **FastAPI (Python)** for high-throughput, async REST APIs
-- **SQLAlchemy ORM** & Alembic for database migrations
-- **PostgreSQL** for robust, relational data storage
-- **Redis** for caching, pub/sub, and fast ephemeral state
+Smart Add takes a single word and fills a card from
+[Kaikki](https://kaikki.org)/Wiktionary — article, conjugation, examples, IPA —
+with pronunciation audio synthesised at save time. Every field is a toggle, so
+the learner decides what ends up on the front and the back. The manual builder
+takes the opposite approach: **the form is the card**, previewed exactly as it
+will appear in review, so there is no gap between building it and seeing it.
 
-**Infrastructure & DevOps:**
-- **Docker** & **Docker Compose** for orchestration
-- **Caddy** as a modern reverse proxy with automatic TLS
-- Engineered for seamless, zero-downtime deployments
+Bulk import accepts CSV, with per-row audio either auto-generated or uploaded.
 
-## 🌍 Live Application
+### German articles as their own drill
 
-**Experience the platform live:** [flewi.app](https://flewi.app)
+`der/die/das` is the part of German that resists ordinary flashcards, so it has
+a separate engine with its own interval ladder and its own accuracy tracking —
+including which article a learner wrongly reaches for when they miss, which
+turns out to be the more useful signal.
 
-Currently available as a high-performance responsive web application. 
+### Finding the words that never stick
 
-**Native Apps:**
-- 🍎 **iOS App:** Live on the App Store: https://apps.apple.com/us/app/flewi/id6761818741
-- 🤖 **Android App:** Coming soon to the Google Play Store.
+Cards that are repeatedly forgotten are surfaced as leeches with their forget
+counts, alongside the ones that recovered. A learner who knows which eleven
+words are the problem can do something about them.
 
-## 📱 Install (PWA)
+---
 
-While the native apps are being finalized, Flewi supports seamless installation as a Progressive Web App (PWA) for an immediate native-app feel.
+## Engineering
 
-- **iOS (Safari):** Open [flewi.app](https://flewi.app) → Share → Add to Home Screen
-- **Android (Chrome):** Open [flewi.app](https://flewi.app) → Menu (⋮) → Install app
-- **Desktop (Chrome/Edge):** Click the install icon in the address bar
+**Mobile — React Native (Expo).** iOS and Android from one codebase. Sign in
+with Apple and Google, App Store subscriptions, local and push notifications
+for review reminders, fully localised in English and German.
+
+**Web — React (Vite) + Tailwind.** An installable PWA with gesture-driven card
+review, sharing one account and one review queue with mobile.
+
+**API — FastAPI (async Python).** SQLAlchemy and Alembic over PostgreSQL,
+Redis for caching and ephemeral state. Pytest suite with a CI gate that fails
+on syntax the deployed interpreter cannot run — added after a release where
+newer annotation syntax passed locally and broke in production.
+
+**Infrastructure — Docker Compose**, Caddy as reverse proxy with automatic
+TLS, zero-downtime deploys.
+
+---
+
+## What is in 2.0.4
+
+- Today's plan became a numbered sequence with time estimates and a handoff
+  between steps
+- Every rating button shows its interval before you press it
+- The Library was rebuilt around user-defined categories, with one Today card
+  carrying everything due and new
+- Collections became **Discover**: browse decks other people have shared, or
+  publish your own
+- The app is fully German, dashboard included
+- New cards are dealt across decks instead of draining the oldest
+- Stats rebuilt to count seven days rather than seven rows
+
+---
+
+## Pricing
+
+A permanent free plan — 10 new cards and 20 reviews a day, across every Space.
+Paid plans lift the limits: **Simple €2.99/month**, **Pro €6.99/month**.
+Shared decks are free to download.
